@@ -1,0 +1,14 @@
+{% extends "testsite/header.html" %}
+
+{% block content %}
+<h1>This is my site!</h1>
+
+{% for post in posts %}
+    <h1>{{post.user}}</h1>
+    <p>{{post.post_date}}</p>
+    <p>{{post.post_content}}</p>
+{% endfor %}
+
+{% include "testsite/includes/snippet.html" %}
+
+{% endblock %}

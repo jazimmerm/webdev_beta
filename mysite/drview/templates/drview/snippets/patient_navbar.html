@@ -1,0 +1,62 @@
+{% block content %}
+    <div class="sidebar-container">
+        <div class="sidebar-header">
+                <nav id="patient-nav" class="navbar navbar-light bg-light navbar-fixed-top">
+                <ul class="nav nav-pills" role="tablist">
+                    <li>
+                        <div class="nav-item btn-group">
+                            <a class="btn nav-link" href="#appts">Appts</a>
+                            <a class="btn nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#one">Today</a>
+                                <a class="dropdown-item" href="#two">This Week</a>
+                                <a class="dropdown-item" href="#three">This Month</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#all-patients">All Patients</a>
+                    </li>
+                </ul>
+                </nav>
+        </div>
+        <div id="patientNav" class="sidebar" data-spy="scroll" data-target="#patient-nav" data-offset="0">
+            <nav>
+            <h4 id="appts" class="scrollspy-head bg-light">Appointments</h4>
+            <ul>
+            {% for patient in appointments %}
+                <li>
+                    <div class="card" draggable="true" data-event='{ "title": "{{patient.patient_name}}", "duration": "01:00" }'>
+                        <div class="card-header">
+                            <a href="{% url 'testsite:test' %}" class="card-link">
+                            {{patient.patient_name}}
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{patient.time_start|date:"SHORT_DATETIME_FORMAT"}} at {{patient.location}}</p>
+                            <p class="card-text">For: {{patient.reason}}</p>
+                            <p class="card-text">Primary concern: {{patient.patient_concern}}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+            <h4 id="all-patients" class="scrollspy-head bg-light">All Patients</h4>
+            <ul>
+            {% for patient in patientexample %}
+                <li>
+                    <div class="card" draggable="true" id="draggable-el" data-event='{ "title": "{{patient.patient_name}}", "duration": "01:00" }'>
+                        <div class="card-header">
+                            {{patient.patient_name}}
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{patient.patient_concern}}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </nav>
+        </div>
+    </div>
+{% endblock %}

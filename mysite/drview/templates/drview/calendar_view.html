@@ -1,0 +1,95 @@
+{% extends "drview/main.html" %}
+
+{% block header %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'fullcalendar/core/main.min.css' %}" />
+<link rel="stylesheet" href="{% static 'fullcalendar/daygrid/main.min.css' %}" />
+<link rel="stylesheet" href="{% static 'fullcalendar/timegrid/main.min.css' %}" />
+
+<script src="{% static 'fullcalendar/core/main.min.js' %}"></script>
+<script src="{% static 'fullcalendar/daygrid/main.min.js' %}"></script>
+<script src="{% static 'fullcalendar/timegrid/main.min.js' %}"></script>
+<script src="{% static 'fullcalendar/interaction/main.min.js' %}"></script>
+<script src="{% static 'fullcalendar/rrule/main.min.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="row h-100" style="padding-top:50px">
+    <div class="col-12 col-md-3 col-xl-2">
+        {% include "drview/snippets/patient_navbar.html" %}
+    </div>
+    <div class="col-md-6 col-xl-8" style="height:99%">
+        <div id="calendar"></div>
+    </div>
+    <div class="col-12 col-md-3 col-xl-2" style="padding-right:20px">
+        <h2>Add Appointment</h2>
+        <form method="post" action="">
+            {% csrf_token %}
+                <div class="form-group">
+                    {{apptform.appt_patient}}
+                </div>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker3'>
+                        {{apptform.date}}
+                        <div class="input-group-append">
+                            <span class="input-group-text form-control"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class='input-group' id='datetimepicker4'>
+                        {{apptform.starts_at}}
+                        {{apptform.ends_at}}
+                        <div class="input-group-append">
+                            <span class="input-group-text form-control"><i class="fas fa-clock"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{apptform.appt_location}}
+                </div>
+                <div class="form-group">
+                    {{apptform.reason.label}}
+                    {{apptform.reason}}
+                </div>
+                <div class="form-group">
+                    {{apptform.repetition}}
+                </div>
+                <div class="collapse" id="weekdayCollapse">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        {% for checkbox in apptform.byweekday %}
+                        <label class="btn btn-outline-secondary">
+                            {{ checkbox.tag }}{{ checkbox.choice_label }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Add Appointment">
+                {{apptform.errors}}
+                {{apptform.non_field_errors}}
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {{ apptform.media }}
+    {% include "drview/snippets/calendar_script.html" %}
+<script type="text/javascript">
+    $(function () {
+        /*
+        $('.datepicker').datepicker({
+            changeMonth: true,
+            changeYear: true,
+        }); */
+        $("#id_repetition").change(function(){
+            var selection = $("#id_repetition option:selected").text();
+            if(selection == "Weekly"){
+                    $("#weekdayCollapse").collapse("show");
+                } else {
+                    $("#weekdayCollapse").collapse("hide");
+                }
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,95 @@
+{
+  "_args": [
+    [
+      "@fullcalendar/timegrid",
+      "/home/jazimmerman/PycharmProjects/webdev/mysite"
+    ]
+  ],
+  "_from": "@fullcalendar/timegrid@latest",
+  "_hasShrinkwrap": false,
+  "_id": "@fullcalendar/timegrid@4.4.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/@fullcalendar/timegrid",
+  "_nodeVersion": "13.12.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/timegrid_4.4.2_1590697415248_0.9351109825509472"
+  },
+  "_npmUser": {
+    "email": "arshaw@arshaw.com",
+    "name": "arshaw"
+  },
+  "_npmVersion": "6.14.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "@fullcalendar/timegrid",
+    "raw": "@fullcalendar/timegrid",
+    "rawSpec": "",
+    "scope": "@fullcalendar",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@fullcalendar/timegrid/-/timegrid-4.4.2.tgz",
+  "_shasum": "9d5b26204cd2b0928e7498c54f758a6d07b15191",
+  "_shrinkwrap": null,
+  "_spec": "@fullcalendar/timegrid",
+  "_where": "/home/jazimmerman/PycharmProjects/webdev/mysite",
+  "author": {
+    "email": "arshaw@arshaw.com",
+    "name": "Adam Shaw",
+    "url": "http://arshaw.com/"
+  },
+  "bugs": {
+    "url": "https://fullcalendar.io/reporting-bugs"
+  },
+  "copyright": "2019 Adam Shaw",
+  "dependencies": {
+    "@fullcalendar/daygrid": "~4.4.0"
+  },
+  "description": "Display your events on a grid of time slots",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "fileCount": 9,
+    "integrity": "sha512-M5an7qii8OUmI4ogY47k5pn2j/qUbLp6sa6Vo0gO182HR5pb9YtrEZnoQhnScok+I0BkDkLFzMQoiAMTjBm2PQ==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe0B3HCRA9TVsSAnZWagAA+8IP/iOdaEltMzHWmbXsVrWn\nF93gMQC1eXLXIkN9Ns1DgGepudgJEsW4syFDWmMiJdYh7/Ip3rDIbN7FmRGG\nNPV4WFhPk5lEF/ojDy1WVxW9X3CJqHidTelQpr6hNR6QlE1IKR+oSTv4vxTC\nN86xUaQ/y2nEgvccpZPzRn4h0h+NzqxaKaRrbcB34gbJjg8E1yU3moH0DGEL\n0owH0YCUCTtJ3EyMzEav117metqvT+UFtoudogCDHHJtOUIAPGtDcgHolF7x\nUKFmJ+g1MD4Zt6bEaeim87+AS0kSn49t3u1CHlm5XRu3b8Dh23Nz8UP04Zqo\nvzoFWPlBg0WmhmqpXr7S/s3I5MBb2GzEZaj/xKSy8YC30m+UAo+WUHa/Kz8X\nvfTeN7PO2eqmuAxy9L/m11MxA+i6zjGcMwxQ840AER3klJxujwni4XHR+uKN\nzcNDdSyKfq7ctkfF36ZqvjZHnBDlP8BCT6n29CGXNzft6RUTQ5YKfnckiFDN\nD4DK7Gc3BChHZ66cmBjxFZwd168fR+mTlkZoCK/S5gesIECDkFIgjU/0S3Hn\nmtx2T2If4pSi/KZLeHkfrEiLf90Q9fDXxvk87MR7O56hOAq0Xc6MPr0ZE1tN\n4fZbpwFvzekz2mNHTIy3BSvp4gGRpafJ2SA6njw6HrQtBSrZVcDN0ygClqH/\nlfhN\r\n=QwvR\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "9d5b26204cd2b0928e7498c54f758a6d07b15191",
+    "tarball": "https://registry.npmjs.org/@fullcalendar/timegrid/-/timegrid-4.4.2.tgz",
+    "unpackedSize": 183999
+  },
+  "docs": "https://fullcalendar.io/docs/timegrid-view",
+  "homepage": "https://fullcalendar.io/",
+  "keywords": [
+    "calendar",
+    "event",
+    "full-sized"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "maintainers": [
+    {
+      "name": "arshaw",
+      "email": "arshaw@arshaw.com"
+    }
+  ],
+  "module": "main.esm.js",
+  "name": "@fullcalendar/timegrid",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "@fullcalendar/core": "~4.4.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "homepage": "https://github.com/fullcalendar/fullcalendar",
+    "type": "git",
+    "url": "git+https://github.com/fullcalendar/fullcalendar.git"
+  },
+  "title": "FullCalendar Time Grid Plugin",
+  "types": "main.d.ts",
+  "unpkg": "main.min.js",
+  "version": "4.4.2"
+}

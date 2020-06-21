@@ -1,0 +1,93 @@
+{
+  "_args": [
+    [
+      "@fullcalendar/interaction",
+      "/home/jazimmerman/PycharmProjects/webdev/mysite"
+    ]
+  ],
+  "_from": "@fullcalendar/interaction@latest",
+  "_hasShrinkwrap": false,
+  "_id": "@fullcalendar/interaction@4.4.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/@fullcalendar/interaction",
+  "_nodeVersion": "13.12.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/interaction_4.4.2_1590697408875_0.39384616742739675"
+  },
+  "_npmUser": {
+    "email": "arshaw@arshaw.com",
+    "name": "arshaw"
+  },
+  "_npmVersion": "6.14.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "@fullcalendar/interaction",
+    "raw": "@fullcalendar/interaction",
+    "rawSpec": "",
+    "scope": "@fullcalendar",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@fullcalendar/interaction/-/interaction-4.4.2.tgz",
+  "_shasum": "0a6be06538f843b6f0f4e9b4de87a5e3ec3629fb",
+  "_shrinkwrap": null,
+  "_spec": "@fullcalendar/interaction",
+  "_where": "/home/jazimmerman/PycharmProjects/webdev/mysite",
+  "author": {
+    "email": "arshaw@arshaw.com",
+    "name": "Adam Shaw",
+    "url": "http://arshaw.com/"
+  },
+  "bugs": {
+    "url": "https://fullcalendar.io/reporting-bugs"
+  },
+  "copyright": "2019 Adam Shaw",
+  "dependencies": {},
+  "description": "Provides functionality for event drag-n-drop, resizing, dateClick, and selectable actions",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "fileCount": 7,
+    "integrity": "sha512-3ItpGFnxcYQT4NClqhq93QTQwOI8x3mlMf5M4DgK5avVaSzpv9g8p+opqeotK2yzpFeINps06cuQyB1h7vcv1Q==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe0B3ICRA9TVsSAnZWagAA6jEP/R1BxjuDrgEE4Vm72g6b\nRpIHj/Rpfx1TxeQcGzC1BnV8Ce4NbEmAUf3pxXgqjrin3+tWN/eqdar2Thm0\nwsR6dh5PqvMRO6iUO+ofE41aPvzgvdeV0zPJK3NcjQf7KBcTS/5G+Md6sk0n\nbiACn6KdrrjqcQ0vNQkF5142nQuNWOttee3IvxOwItjXKjoRepkqHO0VEvEe\nd97df8/i7k9GAIPgjpaavJpCmtNTMysJetFwXUJJ+/GrceO90jFfE8QnIqpq\nrxKJPhLnQRUULhVTjii9fNFDpoQ+aCiephIh0iQNbrDYnmQKbfpER5IpmbZA\nDvx/qz56O0q7q/2Ine/Oi5VYL3T2qMyKCqO9jojErJdV4yf/7wy5iAGE4F6d\nfDuBXMnT0j//zAp4kV+WGjwTxazv0G/f8SqpKdQXI6hN17Jr4VDIolfKGIkI\nir/02dt3snFaEtdqwJlBdwl6ylhEUrLZaMo3jGMnuQSN8qU5KzFcfucv5GA1\nhc88poyx/hUzSZvPDHibhbwPgc1Rq3VFev18ZUz8wH9+MhEANo8HiDHxCtZi\nOkfoE/lVHUNzJRU0pBVtgy8qwB3spub+g1rmPpa0EokyK7tFr4OanBimuHUa\nIROzY1/VNRYeuWS0uD63DdlsYXyuYwc7AuQ+VWebsQWZ83oKtyKwDRSW09Rd\n+cL6\r\n=paOz\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "0a6be06538f843b6f0f4e9b4de87a5e3ec3629fb",
+    "tarball": "https://registry.npmjs.org/@fullcalendar/interaction/-/interaction-4.4.2.tgz",
+    "unpackedSize": 249930
+  },
+  "docs": "https://fullcalendar.io/docs/editable",
+  "homepage": "https://fullcalendar.io/",
+  "keywords": [
+    "calendar",
+    "event",
+    "full-sized"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "maintainers": [
+    {
+      "name": "arshaw",
+      "email": "arshaw@arshaw.com"
+    }
+  ],
+  "module": "main.esm.js",
+  "name": "@fullcalendar/interaction",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "@fullcalendar/core": "~4.4.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "homepage": "https://github.com/fullcalendar/fullcalendar",
+    "type": "git",
+    "url": "git+https://github.com/fullcalendar/fullcalendar.git"
+  },
+  "title": "FullCalendar Interaction Plugin",
+  "types": "main.d.ts",
+  "unpkg": "main.min.js",
+  "version": "4.4.2"
+}

@@ -1,0 +1,18 @@
+          ## from calendar_script.html
+           /* -- This should totally work but it doesn't and I don't know why --
+           dayRender: function(dayRenderInfo) {
+            var element = dayRenderInfo.el;
+            var view = dayRenderInfo.view;
+            var date = dayRenderInfo.date;
+            element.ondblclick = function(view, date) {
+            if (view.type == 'dayGridMonth'){
+                calendar.changeView('timeGridWeek');
+                }
+            if (view.type == 'timeGridWeek'){
+                calendar.changeView('timeGridDay');
+            }
+            calendar.gotoDate(date.dateStr);
+            calendar.select(date.dateStr);
+           };
+           },
+           */

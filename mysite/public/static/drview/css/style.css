@@ -1,0 +1,50 @@
+body, html {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+body {
+    padding-top: 50px;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.navbar-header {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 1000;
+    height: 50px;
+}
+/* Container for a sidebar. */
+.sidebar-container {
+	height: 100%;
+	position: absolute;
+    padding: 0px;
+    padding-left: 10px;
+}
+
+.sidebar-header {
+    position: absolute;
+	z-index: 200;
+	width: 93%;
+}
+
+/* Scrollable sidebar. */
+.sidebar {
+    padding-top: 60px;
+    width: 100%;
+    height: 100%;
+ 	position: relative;
+	overflow-y: scroll;
+	z-index: 100;
+}
+
+.scrollspy-head {
+    width: 100%;
+}
