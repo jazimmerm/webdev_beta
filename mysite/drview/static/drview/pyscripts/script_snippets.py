@@ -26,8 +26,7 @@ class makePatientContext(object):
                            'location': y.appt_location,
                            'reason': y.reason[:30],
                            'patient_concern': patient.primary_concern,
-                           'rrule_repetition': y.repetition,
-                           'rrule_byweekday': y.byweekday
+                           'rrule_str': y.rrule,
                            }
             appointmentlist.append(appointment)
 

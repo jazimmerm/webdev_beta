@@ -27,20 +27,22 @@ class Doctor(models.Model):
         return ('{} {}'.format(self.first_name, self.last_name))
 
 class Appointments(models.Model):
-
-    DAILY = 'RRule.DAILY'
-    WEEKLY = 'RRule.WEEKLY'
-    MONTHLY = 'RRule.MONTHLY'
+    #Choices for dropdown and repetition.
+    NONE = ''
+    DAILY = 'DAILY'
+    WEEKLY = 'WEEKLY'
+    MONTHLY = 'MONTHLY'
     REPETITION_CHOICES = [
+        (NONE, _('Repeat:')),
         (DAILY, _('Daily')),
         (WEEKLY, _('Weekly')),
         (MONTHLY, _('Monthly')),
     ]
-    MONDAY = 'RRule.MO'
-    TUESDAY = 'RRule.TU'
-    WEDNESDAY = 'RRule.WE'
-    THURSDAY = 'RRule.TH'
-    FRIDAY = 'RRule.FR'
+    MONDAY = 'MO'
+    TUESDAY = 'TU'
+    WEDNESDAY = 'WE'
+    THURSDAY = 'TH'
+    FRIDAY = 'FR'
     WEEKDAY_CHOICES = [
         (MONDAY, _('Mon')),
         (TUESDAY, _('Tues')),
@@ -49,15 +51,15 @@ class Appointments(models.Model):
         (FRIDAY, _('Fri')),
     ]
 
-
+    #Model Fields
     starts_at = models.DateTimeField()
     ends_at = models.DateTimeField()
-    appt_location = models.CharField(max_length=100)
+    date_created = models.DateTimeField(auto_now_add=True, blank=True)
+    appt_location = models.CharField(max_length=100, null=True)
     appt_doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
-    appt_patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    reason = models.TextField(max_length=256)
-    repetition = models.CharField(max_length=20, choices=REPETITION_CHOICES)
-    byweekday = models.CharField(max_length=64, default='')
+    appt_patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True)
+    reason = models.TextField(max_length=256, null=True)
+    rrule = models.CharField(max_length=128, null=True, blank=True)
 
     def __str__(self):
         return "{0} - {1}: {2} Appointment with {3}".format(self.starts_at, self.ends_at, self.appt_doctor,  self.appt_patient)

@@ -10,6 +10,7 @@
 <script src="{% static 'fullcalendar/daygrid/main.min.js' %}"></script>
 <script src="{% static 'fullcalendar/timegrid/main.min.js' %}"></script>
 <script src="{% static 'fullcalendar/interaction/main.min.js' %}"></script>
+<script src="{% static 'fullcalendar/rrule/rrule.min.js' %}"></script>
 <script src="{% static 'fullcalendar/rrule/main.min.js' %}"></script>
 {% endblock %}
 
@@ -23,7 +24,7 @@
     </div>
     <div class="col-12 col-md-3 col-xl-2" style="padding-right:20px">
         <h2>Add Appointment</h2>
-        <form method="post" action="">
+        <form method="POST">
             {% csrf_token %}
                 <div class="form-group">
                     {{apptform.appt_patient}}
@@ -53,7 +54,7 @@
                     {{apptform.reason}}
                 </div>
                 <div class="form-group">
-                    {{apptform.repetition}}
+                    {{apptform.frequency}}
                 </div>
                 <div class="collapse" id="weekdayCollapse">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -64,9 +65,14 @@
                         {% endfor %}
                     </div>
                 </div>
-                <input class="btn btn-primary" type="submit" value="Add Appointment">
-                {{apptform.errors}}
-                {{apptform.non_field_errors}}
+                <input class="btn btn-primary" type="submit" value="Add Appointment" style="margin-top:10px; margin-bottom:10px">
+                <ul>
+                {% if apptform.errors %}
+                    {% for error in apptform.non_field_errors %}
+                    <li>{{error}}</li>
+                    {% endfor %}
+                {% endif %}
+                </ul>
         </form>
     </div>
 </div>
@@ -82,8 +88,8 @@
             changeMonth: true,
             changeYear: true,
         }); */
-        $("#id_repetition").change(function(){
-            var selection = $("#id_repetition option:selected").text();
+        $("#id_frequency").change(function(){
+            var selection = $("#id_frequency option:selected").text();
             if(selection == "Weekly"){
                     $("#weekdayCollapse").collapse("show");
                 } else {

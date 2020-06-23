@@ -1,4 +1,6 @@
 {% block content %}
+{% load mathfilters %}
+{% autoescape off %}
 <script>
       //Fix "a.receiveContext is not a function" error. MUST DO.
 
@@ -7,7 +9,7 @@
         let draggableEl = document.getElementById('patientNav');
 
         let calendar = new FullCalendar.Calendar(calendarEl, {
-          plugins: [ 'dayGrid', 'timeGrid', 'interaction' ],
+          plugins: [ 'dayGrid', 'timeGrid', 'interaction', 'rrule'],
           defaultView: 'timeGridWeek',
           editable: true,
           droppable: true,
@@ -50,9 +52,14 @@
            events: [
            {% for appt in appointments %}
            {
-            title: "{{appt.patient_name}}",
-            start: "{{appt.time_start|date:"Y-m-d H:i"}}",
-            end: "{{appt.time_end|date:"Y-m-d H:i"}}"
+            title: '{{appt.patient_name}}',
+            {% if appt.rrule_str %}
+            rrule: '{{appt.rrule_str}}',
+            duration: '{{appt.time_end|sub:appt.time_start}}'
+            {% else %}
+            start: '{{appt.time_start|date:"Y-m-d H:i"}}',
+            end: '{{appt.time_end|date:"Y-m-d H:i"}}'
+            {% endif %}
            },
            {% endfor %}
            ],
@@ -60,4 +67,5 @@
         calendar.render();
       });
 </script>
+{% endautoescape %}
 {% endblock %}

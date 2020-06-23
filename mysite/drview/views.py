@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .decorators import allowed_roles_redirect
 from .static.drview.pyscripts.script_snippets import makePatientContext
@@ -7,7 +7,6 @@ from .models import Doctor
 from patientview.models import Patient
 from dal import autocomplete
 from django.db.models import Q
-import json
 
 @login_required
 @allowed_roles_redirect(['doctor'])
@@ -18,6 +17,7 @@ def home(request):
     context['appointments'] = patientcontext.appointments()
     return render(request, 'drview/dr_home.html', context=context)
 
+@login_required
 def schedule(request):
     context = {}
     patientcontext = makePatientContext(request)
@@ -25,8 +25,8 @@ def schedule(request):
     if request.method == 'POST':
         form = addAppointmentForm(data=request.POST, user=doc)
         if form.is_valid():
-            weekdays = request.POST.getlist('byweekday')
-            form.save(weekdays = weekdays)
+            form.save()
+            return redirect('drview:calendar')
     else:
         form = addAppointmentForm(user=doc)
     context['apptform'] = form
